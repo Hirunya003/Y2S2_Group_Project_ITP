@@ -1,0 +1,212 @@
+:root {
+  --primary-color: #22c55e;
+  --primary-dark: #16a34a;
+  --primary-light: #86efac;
+  --text-color: #333333;
+  --error-color: #ef4444;
+  --bg-color: #f9fafb;
+  --white: #ffffff;
+  --gray-light: #e5e7eb;
+  --gray: #6b7280;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.auth-form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: var(--gray);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.auth-form {
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-light);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--white);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Complete button redesign for better visibility */
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-image: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+  text-transform: uppercase;
+}
+
+.form-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: transform 0.5s ease;
+  transform: translateX(-100%);
+}
+
+.form-button:hover {
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  transform: translateY(-3px);
+}
+
+.form-button:hover::before {
+  transform: translateX(0);
+}
+
+.form-button:active {
+  transform: translateY(-1px);
+}
+
+.form-button:disabled {
+  background-image: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--gray);
+  font-size: 0.875rem;
+}
+
+.auth-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.auth-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.form-error {
+  color: var(--error-color);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-form-container {
+  animation: fadeIn 0.5s ease-out forwards;
+}

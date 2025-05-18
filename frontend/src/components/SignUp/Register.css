@@ -1,0 +1,235 @@
+.register-form-container {
+  max-width: 550px;
+  animation-delay: 0.1s;
+}
+
+.register-form-container .auth-title {
+  background: linear-gradient(to right, #16a34a, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.75rem;
+}
+
+.register-form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.progress-steps::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--gray-light);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.progress-step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 2px solid var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray);
+  position: relative;
+  z-index: 2;
+}
+
+.progress-step.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.progress-step.complete {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.field-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.address-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-light);
+}
+
+.address-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+.password-strength {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.strength-meter {
+  height: 4px;
+  background-color: var(--gray-light);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.strength-meter-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-weak {
+  background-color: #ef4444;
+  width: 33.33%;
+}
+
+.strength-medium {
+  background-color: #f59e0b;
+  width: 66.66%;
+}
+
+.strength-strong {
+  background-color: #10b981;
+  width: 100%;
+}
+
+/* Fix for button visibility */
+.form-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid var(--primary-dark);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-button:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.auth-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Enhanced button and link styling */
+.register-form-container .form-button {
+  margin-top: 2rem;
+  background-image: linear-gradient(135deg, #155e35 0%, #22c55e 100%); /* Slightly darker gradient */
+  position: relative;
+  z-index: 2;
+}
+
+.register-form-container .auth-link {
+  color: #155e35;
+  font-weight: 700;
+  position: relative;
+}
+
+.register-form-container .form-button::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, #22c55e 0%, #155e35 100%);
+  border-radius: 50px;
+  z-index: -1;
+  opacity: 0.5;
+  animation: pulse 2s infinite;
+}
+
+/* Button shine effect for better visibility */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.register-form-container .form-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shine 3s infinite;
+}
+
+/* Validation error styles */
+.error {
+  color: #ef4444; /* Red for errors */
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+input:invalid {
+  border: 2px solid #ef4444; /* Red border for invalid input */
+}
+
+input:valid {
+  border: 2px solid #10b981; /* Green border for valid input */
+}
+
+/* Validation icon */
+input:invalid + .field-icon {
+  color: #ef4444; /* Red icon for invalid input */
+}
+
+input:valid + .field-icon {
+  color: #10b981; /* Green icon for valid input */
+}

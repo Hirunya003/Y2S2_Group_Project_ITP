@@ -1,0 +1,89 @@
+.order-details-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.order-details {
+    margin-bottom: 2rem;
+}
+
+.order-details p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.order-details p strong {
+    color: #333;
+}
+
+.order-details h3 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem;
+    color: #333;
+}
+
+.order-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.order-items-table th,
+.order-items-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.order-items-table th {
+    background: #f9f9f9;
+    font-weight: 600;
+    color: #333;
+}
+
+.order-items-table td {
+    color: #555;
+}
+
+.order-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.continue-shopping-btn,
+.order-again-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.continue-shopping-btn {
+    background: #007bff;
+    color: #fff;
+}
+
+.continue-shopping-btn:hover {
+    background: #0056b3;
+}
+
+.order-again-btn {
+    background: #28a745;
+    color: #fff;
+}
+
+.order-again-btn:hover {
+    background: #218838;
+}

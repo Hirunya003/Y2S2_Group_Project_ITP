@@ -1,0 +1,175 @@
+/* Import a professional font from Google Fonts (optional) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Root variables for consistent theming */
+:root {
+  --primary-color: #2563eb; /* Professional blue */
+  --primary-hover: #1d4ed8; /* Darker blue for hover */
+  --secondary-color: #6b7280; /* Neutral gray for text */
+  --background-color: #f9fafb; /* Light background */
+  --card-background: #ffffff; /* White for card */
+  --border-color: #e5e7eb; /* Light border */
+  --error-color: #dc2626; /* Red for errors */
+  --success-color: #16a34a; /* Green for success */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition: all 0.2s ease-in-out;
+}
+
+/* Reset default margins and ensure box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.order-report-container {
+  max-width: 640px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: var(--card-background);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); /* Subtle gradient */
+}
+
+/* Heading */
+.order-report-container h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1f2937; /* Dark gray for headings */
+  margin-bottom: 1rem;
+}
+
+/* Form container */
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Label styling */
+.report-form label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  text-align: left;
+  width: 100%;
+}
+
+/* Select dropdown */
+.report-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #374151; /* Dark text */
+  background: #f3f4f6; /* Light gray background */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  appearance: none; /* Remove default arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%228%22%20viewBox%3D%220%200%2012%208%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1%201L6%206L11%201%22%20stroke%3D%22%236B7280%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+  transition: var(--transition);
+}
+
+.report-form select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.report-form select:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Button styling */
+.generate-report-btn {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.generate-report-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.generate-report-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.generate-report-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* Spinner styling */
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-top: 1rem;
+}
+
+/* Animation for spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .order-report-container {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .order-report-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .report-form {
+    max-width: 100%;
+  }
+
+  .report-form select,
+  .generate-report-btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Accessibility: High contrast for focus states */
+.report-form select:focus,
+.generate-report-btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+.order-report-container .description {
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+  }

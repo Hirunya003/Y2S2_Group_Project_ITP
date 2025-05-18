@@ -1,0 +1,23 @@
+.all-orders-container {
+    padding: 1rem;
+  }
+  
+  .all-orders-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .all-orders-container th,
+  .all-orders-container td {
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  .all-orders-container th {
+    background-color: #f9fafb;
+    font-weight: 600;
+  }
+  
+  .all-orders-container tr:nth-child(even) {
+    background-color: #f9fafb;
+  }
